@@ -13,6 +13,11 @@ Status per item: ✅ Ada/Lengkap · ⚠️ Ada tapi belum lengkap ("to be confir
 3. **❌ Kelompok gas (IIC/IIB/IIA), kelas temperatur (T1–T6), rentang suhu lingkungan, dan klasifikasi zona (0/1/2)** — parameter dasar yang menentukan skema sertifikasi — **sama sekali belum didefinisikan** di dokumen manapun. Tanpa ini, lingkup pengujian IECEx/ATEX belum bisa ditentukan.
 4. **❌ Ingress Protection (IP rating)** — semua tiga perangkat masih "[to be confirmed]" untuk IP rating, padahal ini persyaratan dasar enclosure untuk area berbahaya.
 5. **⚠️ Enclosure disebut "metal" (tabel EMC)** tapi checklist minta gambar teknik struktur enclosure dengan parameter celah (gap)/panjang/volume — ini krusial jika desain memakai proteksi flameproof (Ex d), dan belum tersedia sama sekali.
+6. **❌ Ketinggian pemasangan belum tersertifikasi untuk instalasi permanen** — dikonfirmasi rapat resmi 6 Agustus 2026 (repo `GLD-V2-Report-2026`, `gate:cert-height`): uji coba di kilang baru dipasang setinggi orang, bukan ketinggian instalasi final. Sertifikasi ATEX/IECEx perangkat perlu eksplisit mencakup skenario ketinggian pemasangan aktual di lapangan.
+7. **❌ Solar panel Cluster Head dan keamanan baterai Li-ion 18650 CH belum disourcing/didokumentasikan** — dikonfirmasi 19 Agustus 2026 (`gate:solar-cert`, `gate:ch-batt-safety`): solar panel wajib tersertifikasi hazardous/flammable area, dan keamanan sel/BMS baterai Li-ion 18650 Cluster Head (mis. IEC 62133/UN 38.3) masih terbuka, PIC LGU. Ini memperkuat isu kritis #2 di atas — bukan cuma Node Sensor, Cluster Head juga punya baterai Li-ion yang sama sekali belum diverifikasi.
+8. **⚠️ Material PVC eksplisit dihindari** untuk seluruh housing/bracket sesuai keputusan resmi rapat 6 Agustus 2026 — konsisten dengan kebutuhan sertifikasi area berbahaya, tapi berarti pilihan material enclosure/bracket harus dikonfirmasi ulang tidak memakai PVC di manapun (termasuk komponen kecil seperti dudukan kabel).
+
+> Sumber tambahan (6–8): repo internal proyek `GLD-V2-Report-2026` (`memory/decisions.md`, `memory/blockers_metrics.md`) — hasil rapat resmi tim ITB/LGU/Pertamina, bukan dari dua dokumen sumber PDF/DOCX awal di folder ini. Rencana sertifikasi perangkat untuk kilang sendiri tercatat sebagai **action item resmi** dengan PIC "Tim ITB bersama Pertamina" (rapat 6 Agustus) — jadi dokumen ini sejalan dengan proses yang memang sedang berjalan di pihak proyek.
 
 ---
 
@@ -86,7 +91,20 @@ Semua gambar di atas harus mencantumkan **dimensi, toleransi, dan material** —
 
 ---
 
-## 4. Field "to be confirmed" yang Masih Terbuka (dari `Dokumen_spesifikasi_input_2.docx`)
+## 4. Field "to be confirmed" — Update Status (setelah cross-check repo internal proyek)
+
+`Dokumen_spesifikasi_input_2.docx` sudah diperbarui (26 Agustus 2026) menggunakan data resmi dari repo internal proyek `GLD-V2-Report-2026` (notulen rapat, hasil pengujian daya/RF, spek EMC terverifikasi). **~40 dari 56 field yang sebelumnya kosong kini terisi** dengan data bersumber jelas (frekuensi, daya, dimensi, material, mounting, dsb). Sisanya sengaja dibiarkan `[to be confirmed]` karena memang belum ada data resmi — jangan diisi kira-kira. Yang masih terbuka:
+- Berat total (semua 3 perangkat)
+- IP rating Node Sensor & Gateway (Cluster Head sudah terkonfirmasi IP66/67)
+- Cable entry/gland spesifik, DC connector Gateway, konektor antena Gateway
+- Rentang suhu & kelembapan operasi (semua perangkat)
+- Detail proteksi elektrikal (fuse/reverse polarity/overvoltage/overcurrent) — hanya diketahui "ditangani sebagian oleh BQ25185" untuk CH
+- Kapasitas baterai Cluster Head (12000 mAh belum ada sumber konfirmasi)
+- Jumlah maksimum Sensor Node per Cluster Head/Gateway (`gate:capacity` — action item resmi terbuka, Tim Komunikasi ITB)
+
+Detail lengkap per field (versi sebelum update) ada di riwayat commit git; ringkasan asli:
+
+## 4b. Field "to be confirmed" yang Masih Terbuka (dari `Dokumen_spesifikasi_input_2.docx`)
 
 ### Node Sensor
 - Internal operating voltages (5V/3.3V)
