@@ -6,6 +6,29 @@ Dokumen ini berisi hasil riset produk enclosure Ex-rated (ATEX/IECEx) yang datas
 
 ---
 
+## 0. Nanjing KELISAIKE — produsen produk yang Anda tautkan sebelumnya (referensi paling langsung)
+
+Produk yang Anda link ("ATEX IECEx Gas Detector System for Petrochemical Oil Industry", Cl₂, US$280) ternyata tidak mencantumkan material casing di listing marketplace-nya. Tapi produsennya, **Nanjing KELISAIKE Safety Equipment Co., Ltd.**, punya website resmi (njklsk.cn) dengan lini produk gas detector sejenis yang datasheetnya menyebut material secara eksplisit — ini referensi **paling relevan** karena dari brand yang sama persis.
+
+| Parameter | K500 (Wall-Mounted) | K800 Series |
+|---|---|---|
+| Material casing | **Aluminum alloy + stainless steel** | **Aluminum alloy + stainless steel** |
+| Marking Ex | ExdII CT6 (sesuai IEC61508) | Exd II CT6 — satu sumber pihak ketiga menulis "Exd IIC T6" (grup gas lebih spesifik) |
+| Dimensi | 160 × 126 × 78 mm | 183 × 143 × 107 mm |
+| Berat | 3,0–3,5 kg | 2,0–2,5 kg |
+| Suhu operasi | −20°C s/d +50°C (varian −50°C s/d +50°C) | −20°C s/d +50°C |
+| Kabel transmisi | — | 3-core shielded, 3×1,5 mm² |
+| Sertifikasi disebutkan | CE, CMC, Ex, MA, UL, CCC | UL, CE, CMC, Ex, MA |
+| Sumber | [njklsk.en.made-in-china.com](https://njklsk.en.made-in-china.com/product/eFuGRIVbkBhd/China-K500-Wall-Mounted-Gas-Detector-for-Distributed-Control-System-DCS-.html), [njklsk.cn](https://www.njklsk.cn/K800-Series-Fixed-Gas-Detector-pd45847535.html) | sama |
+
+**Catatan penting:**
+- Grade spesifik aluminium/stainless steel (mis. seri 316L, EN AC-xxxxx) **tidak dicantumkan** di kedua datasheet ini — hanya disebut "aluminum alloy and stainless steel" secara umum. Untuk BOM resmi, ini masih perlu didalami langsung ke produsen.
+- IP rating dan nomor sertifikat Ex/ATEX/UL **tidak dicantumkan eksplisit** di kedua halaman produk — hanya nama sertifikasi tanpa nomor. Ini pola sama seperti listing awal yang Anda kirim: klaim "ATEX/UL/CE" di marketplace B2B sering tidak disertai bukti nomor sertifikat yang bisa diverifikasi.
+- Ada inkonsistensi kecil grade gas antar-sumber untuk K800 ("Exd II" vs "Exd IIC") — jangan jadikan acuan pasti sebelum konfirmasi ke produsen.
+- Kombinasi **aluminium + stainless steel** ini konsisten dengan referensi AIYI di bawah (§1) — pola umum industri gas detector: badan utama aluminium die-cast, bagian yang kontak langsung lingkungan/sensor pakai stainless steel.
+
+---
+
 ## 1. AIYI — ATEX & SIL2 Certified Gas Detector (referensi paling dekat bentuk & fungsi)
 
 | Parameter | Nilai |
